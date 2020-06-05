@@ -142,15 +142,9 @@ brew "libyaml" # should come after openssl
 brew "coreutils"
 brew "yarn"
 cask "gpg-suite"
-
-# Databases
-brew "postgres", restart_service: :changed
-brew "redis", restart_service: :changed
+cask "docker"
+cask "figma"
 EOF
-
-fancy_echo "Update heroku binary ..."
-brew unlink heroku
-brew link --force heroku
 
 fancy_echo "Configuring asdf version manager ..."
 if [ ! -d "$HOME/.asdf" ]; then
